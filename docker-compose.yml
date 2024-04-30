@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8002:5000"
+    command: python main.py
+    volumes:
+      - ./weights:/files/weights
