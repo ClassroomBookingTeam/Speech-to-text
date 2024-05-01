@@ -13,10 +13,10 @@ def load_model():
     if not os.path.exists("./weights/whispercpp/ggml-small.bin"):
         os.makedirs("./weights/whispercpp", exist_ok=True)
         os.system(
-            "wget -L 'https://ggml.ggerganov.com/ggml-model-whisper-small.bin' -O './weights/whispercpp/ggml-small.bin'"
+            "wget -L 'https://ggml.ggerganov.com/ggml-model-whisper-base.bin' -O './weights/whispercpp/ggml-small.bin'"
         )
 
-    model = Whisper.from_pretrained("small", basedir="weights")
+    model = Whisper.from_pretrained("base", basedir="weights")
     model.params.with_language("ru")
     return model
 
